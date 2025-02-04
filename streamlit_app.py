@@ -18,14 +18,8 @@ def calculate_tax_with_rebate(income, is_salaried):
         else:
             tax = 200000 + (taxable_income - 2000000) * 0.30
 
-    def calculate_tax(taxable_income, tax):
-    rebate_limit = 60000  # Updated rebate limit
-    tax_limit = 1275000   # Taxable income limit after considering standard deduction
-
-    if taxable_income <= tax_limit:
-        rebate = min(tax, rebate_limit)
-        tax -= rebate
-    
+    if taxable_income <= 1275000: 
+        rebate = min(tax, 75000) tax -= rebate
 
     return max(tax, 0)
 
