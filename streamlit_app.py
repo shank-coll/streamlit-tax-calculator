@@ -2,21 +2,21 @@ import streamlit as st
 
 def calculate_tax_with_rebate(income, is_salaried):
     """Tax calculation logic"""
-    standard_deduction = 50000 if is_salaried else 0
+    standard_deduction = 75000 if is_salaried else 0
     taxable_income = income - standard_deduction
 
     tax = 0
-    if taxable_income > 300000:
-        if taxable_income <= 700000:
-            tax = (taxable_income - 300000) * 0.05
-        elif taxable_income <= 1000000:
-            tax = 20000 + (taxable_income - 700000) * 0.10
+    if taxable_income > 400000:
+        if taxable_income <= 800000:
+            tax = (taxable_income - 400000) * 0.05
         elif taxable_income <= 1200000:
-            tax = 50000 + (taxable_income - 1000000) * 0.15
-        elif taxable_income <= 1500000:
-            tax = 80000 + (taxable_income - 1200000) * 0.20
+            tax = 20000 + (taxable_income - 800000) * 0.10
+        elif taxable_income <= 1600000:
+            tax = 60000 + (taxable_income - 1200000) * 0.15
+        elif taxable_income <= 2000000:
+            tax = 120000 + (taxable_income - 1600000) * 0.20
         else:
-            tax = 140000 + (taxable_income - 1500000) * 0.30
+            tax = 200000 + (taxable_income - 2000000) * 0.30
 
     if taxable_income <= 1275000:
         rebate = min(tax, 60000)
