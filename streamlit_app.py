@@ -25,7 +25,7 @@ def calculate_tax_with_rebate(income, is_salaried):
     if taxable_income <= tax_limit:
         rebate = min(tax, rebate_limit)
         tax -= rebate
-    return
+    
 
     return max(tax, 0)
 
