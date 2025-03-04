@@ -25,7 +25,8 @@ def calculate_tax_with_rebate(income, is_salaried):
     return max(tax, 0)
 
 # Streamlit UI
-st.title("💰 Income Tax Calculator (India - 2025)")
+st.title("💰 Income Tax Calculator (India - 2025)" , " By shashank ")
+
 income = st.number_input("Enter your Annual Income (₹)", min_value=0.0, step=1000.0)
 is_salaried = st.checkbox("Are you a salaried employee?")
 
